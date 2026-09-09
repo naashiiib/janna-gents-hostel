@@ -1,0 +1,3115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title id="pageTitle">JANNA GENTS HOSTEL</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+#home,#about,#rooms,#facilities,#contact{scroll-margin-top:105px;}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:#172033;
+    background:#f8f1e8;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.45;
+    z-index:-2;
+    pointer-events:none;
+}
+
+body::before{
+    background:#e7d2bd;
+    top:-150px;
+    left:-120px;
+    animation:floatOne 10s ease-in-out infinite alternate;
+}
+
+body::after{
+    background:#ead7c3;
+    right:-150px;
+    bottom:-120px;
+    animation:floatTwo 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatOne{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(150px,100px);
+    }
+}
+
+@keyframes floatTwo{
+    from{
+        transform:translate(0,0);
+    }
+    to{
+        transform:translate(-120px,-80px);
+    }
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page{
+    width:min(1450px,94%);
+    margin:25px auto;
+    min-height:calc(100vh - 50px);
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    height:75px;
+    padding:0 28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(255,255,255,.78);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.8);
+    border-radius:22px;
+
+    box-shadow:
+        0 15px 40px rgba(112,78,48,.10);
+
+    position:sticky;
+    top:15px;
+    z-index:1000;
+}
+
+
+/* LOGO */
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:48px;
+    height:48px;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        135deg,
+        #9a6b45,
+        #c49a76
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:white;
+    font-size:23px;
+
+    box-shadow:0 8px 20px rgba(154,107,69,.25);
+}
+
+.brand-text h2{
+    font-size:17px;
+    font-weight:800;
+    letter-spacing:-.4px;
+}
+
+.brand-text span{
+    display:block;
+    font-size:10px;
+    color:#8a7868;
+    letter-spacing:1px;
+}
+
+
+.nav-links{
+    display:flex;
+    gap:28px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#665b53;
+    font-size:13px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#8f603d;
+}
+
+
+/* =========================
+   MAIN GRID
+========================= */
+
+.dashboard{
+    margin-top:25px;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(280px,1.05fr)
+        minmax(400px,1.7fr)
+        minmax(260px,.9fr);
+
+    gap:20px;
+}
+
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.card{
+    background:rgba(255,255,255,.82);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.9);
+
+    border-radius:25px;
+
+    box-shadow:
+        0 15px 45px rgba(65,48,120,.08);
+
+    transition:.35s;
+}
+
+.card:hover{
+    box-shadow:
+        0 20px 55px rgba(65,48,120,.12);
+}
+
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-card{
+    overflow:hidden;
+}
+
+.profile-cover{
+    height:215px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(143,96,61,.82),
+            rgba(210,176,145,.52)
+        ),
+        url("cover.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    position:relative;
+}
+
+.profile-cover::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(255,255,255,.25)
+        );
+}
+
+
+/* LOGO CIRCLE */
+
+.profile-logo{
+    position:absolute;
+
+    left:50%;
+    bottom:-52px;
+
+    transform:translateX(-50%);
+
+    width:105px;
+    height:105px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:5px solid white;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.15);
+
+    z-index:2;
+}
+
+.profile-logo-inner{
+    width:82px;
+    height:82px;
+
+    border-radius:50%;
+
+    background:#f8f1e8;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:43px;
+}
+
+
+.profile-content{
+    padding:70px 24px 25px;
+    text-align:center;
+}
+
+.profile-content h1{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:-.6px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+}
+
+.verified{
+    width:19px;
+    height:19px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    flex:0 0 19px;
+    vertical-align:middle;
+}
+.verified svg{
+    width:19px;
+    height:19px;
+    display:block;
+}
+
+.profile-subtitle{
+    margin-top:7px;
+    color:#718096;
+    font-size:13px;
+}
+
+
+/* ABOUT */
+
+.about-title{
+    margin-top:25px;
+
+    font-size:11px;
+    font-weight:800;
+
+    color:#8f603d;
+
+    letter-spacing:1.7px;
+
+    text-align:left;
+}
+
+.about-text{
+    margin-top:10px;
+
+    color:#5f687b;
+
+    font-size:13px;
+    line-height:1.8;
+
+    text-align:left;
+}
+
+
+/* MAIN BUTTON */
+
+.primary-btn{
+    width:100%;
+
+    margin-top:22px;
+
+    border:none;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #986844,
+            #a8744f
+        );
+
+    color:white;
+
+    font-family:inherit;
+    font-size:13px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px rgba(143,96,61,.25);
+
+    transition:.3s;
+}
+
+.primary-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 15px 30px rgba(143,96,61,.35);
+}
+
+
+/* =========================
+   CENTER CONTENT
+========================= */
+
+.center-column{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+
+/* =========================
+   SECTION CARD
+========================= */
+
+.section-card{
+    padding:22px;
+}
+
+.section-heading{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:18px;
+}
+
+.section-heading h2{
+    font-size:13px;
+    font-weight:800;
+
+    color:#8f603d;
+
+    letter-spacing:1px;
+}
+
+.line{
+    height:1px;
+    background:#eee2d7;
+    flex:1;
+    margin-left:15px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    display:grid;
+
+    grid-template-columns:
+        1.4fr 1fr 1fr;
+
+    gap:10px;
+}
+
+.gallery-item{
+    height:145px;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    cursor:pointer;
+}
+
+.gallery-item:first-child{
+    grid-row:span 2;
+    height:300px;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.08);
+}
+
+.gallery-overlay{
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.35),
+        transparent 50%
+    );
+}
+
+
+/* =========================
+   CONTACT & LINKS
+========================= */
+
+.links-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:12px;
+}
+
+.link-icon svg{width:24px;height:24px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+
+.link-item{
+    text-decoration:none;
+
+    color:#172033;
+
+    text-align:center;
+
+    transition:.3s;
+}
+
+.link-icon{
+    width:55px;
+    height:55px;
+
+    margin:auto;
+
+    border-radius:17px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:22px;
+
+    background:#f5ece4;
+
+    box-shadow:
+        0 5px 15px rgba(112,78,48,.07);
+
+    transition:.3s;
+}
+
+.link-item:hover{
+    transform:translateY(-5px);
+}
+
+.link-item:hover .link-icon{
+    background:#eadccf;
+}
+
+.link-item span{
+    display:block;
+
+    margin-top:7px;
+
+    font-size:10px;
+    font-weight:700;
+}
+
+
+/* =========================
+   RIGHT COLUMN
+========================= */
+
+.right-column{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.actions-card{
+    padding:20px;
+}
+
+.action-btn{
+    width:100%;
+
+    border:none;
+
+    padding:14px 16px;
+
+    margin-bottom:10px;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9a6b45,
+            #b27d55
+        );
+
+    color:white;
+
+    font-family:inherit;
+
+    font-size:13px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    transition:.3s;
+
+    box-shadow:
+        0 7px 18px rgba(143,96,61,.18);
+}
+
+.action-btn:last-child{
+    margin-bottom:0;
+}
+
+.action-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 12px 25px rgba(143,96,61,.28);
+}
+
+.action-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.action-icon{
+    font-size:17px;
+}
+
+
+/* PRICE BUTTON */
+
+.price-btn{
+    background:
+        linear-gradient(
+            135deg,
+            #a8744f,
+            #c2916d
+        );
+}
+
+
+/* =========================
+   SOCIAL
+========================= */
+
+.social-card{
+    padding:20px;
+}
+
+.social-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:10px;
+}
+
+.social{
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:#f4ebe2;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    font-size:19px;
+
+    transition:.3s;
+}
+
+.social:hover{
+    transform:translateY(-5px) scale(1.05);
+    background:#eadccf;
+}
+
+
+
+/* =========================
+   EXTRA INFO MODALS
+========================= */
+.info-modal-text{
+    color:#667085;
+    font-size:13px;
+    line-height:1.8;
+}
+.info-card{
+    background:#faf6f1;
+    border:1px solid #eee3d8;
+    border-radius:18px;
+    padding:16px;
+    margin-bottom:12px;
+}
+.info-card h3{
+    font-size:14px;
+    margin-bottom:7px;
+    color:#171a25;
+}
+.info-card p{
+    margin:0;
+    color:#667085;
+    font-size:12px;
+    line-height:1.7;
+}
+.info-list{
+    margin:0;
+    padding-left:20px;
+    color:#667085;
+    font-size:12px;
+    line-height:1.9;
+}
+.modal-action{
+    width:100%;
+    border:none;
+    border-radius:14px;
+    padding:13px 16px;
+    margin-top:8px;
+    background:#9a6b45;
+    color:#fff;
+    font-family:inherit;
+    font-weight:700;
+    cursor:pointer;
+}
+.modal-action.secondary{
+    background:#f3ebe4;
+    color:#171a25;
+}
+.form-group{margin-bottom:14px;}
+.form-group label{display:block;font-size:11px;font-weight:700;color:#667085;margin-bottom:7px;text-transform:uppercase;letter-spacing:.5px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;box-sizing:border-box;border:1px solid #e1e4ee;border-radius:14px;background:#f8f9fc;padding:13px 14px;font-family:inherit;font-size:13px;outline:none;}
+.form-group textarea{min-height:100px;resize:vertical;}
+.bank-row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #eee3d8;}
+.bank-row:last-child{border-bottom:0;}
+.bank-label{font-size:10px;font-weight:800;color:#7b8496;text-transform:uppercase;}
+.bank-value{font-size:13px;font-weight:700;color:#171a25;margin-top:4px;word-break:break-word;}
+.copy-mini{border:0;background:#eef1ff;border-radius:10px;padding:8px 10px;cursor:pointer;}
+
+/* =========================
+   ROOM MODAL
+========================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(18,20,35,.55);
+
+    backdrop-filter:blur(10px);
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    z-index:5000;
+
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+
+    animation:fadeIn .25s ease;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+.modal-box{
+    width:min(650px,100%);
+    max-height:88vh;
+
+    overflow:auto;
+
+    background:#fff;
+
+    border-radius:25px;
+
+    padding:22px;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.25);
+
+    animation:modalUp .35s ease;
+}
+
+@keyframes modalUp{
+    from{
+        transform:translateY(30px) scale(.96);
+        opacity:0;
+    }
+
+    to{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+}
+
+.modal-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:18px;
+}
+
+.modal-header h2{
+    font-size:20px;
+}
+
+.close{
+    width:40px;
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#f3ebe4;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+
+/* =========================
+   ROOM LIST
+========================= */
+
+.room-list{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.room-item{
+    padding:13px;
+
+    border-radius:18px;
+
+    background:#faf6f1;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    border:1px solid #ededf5;
+
+    transition:.3s;
+}
+
+.room-item:hover{
+    transform:translateX(4px);
+    border-color:#d9d2ff;
+}
+
+.room-image{
+    width:125px;
+    height:90px;
+
+    border-radius:13px;
+
+    object-fit:cover;
+}
+
+.room-info{
+    flex:1;
+}
+
+.room-info h3{
+    font-size:15px;
+    margin-bottom:5px;
+}
+
+.room-info p{
+    color:#7b8496;
+    font-size:11px;
+}
+
+.enquiry-small{
+    border:none;
+
+    padding:9px 14px;
+
+    border-radius:10px;
+
+    background:#171a25;
+
+    color:white;
+
+    font-family:inherit;
+
+    font-size:10px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.enquiry-small:hover{
+    background:#986844;
+}
+
+
+/* =========================
+   PRICE MODAL
+========================= */
+
+.price-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.price-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:17px;
+
+    border-radius:15px;
+
+    background:#f6f5ff;
+
+    border:1px solid #e9e5ff;
+}
+
+.price-row h3{
+    font-size:14px;
+}
+
+.price{
+    color:#8f603d;
+    font-size:15px;
+    font-weight:800;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    margin-top:20px;
+
+    padding:22px;
+
+    text-align:center;
+
+    color:#788195;
+
+    font-size:11px;
+}
+
+
+
+.footer-tools{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-left:10px;
+}
+.footer-tool{
+    color:#1877f2;
+    text-decoration:none;
+    font-weight:700;
+    cursor:pointer;
+}
+.footer-tool:hover{ text-decoration:underline; }
+.footer-separator{ color:#b2b7c5; }
+
+.edit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.edit-field{display:flex;flex-direction:column;gap:6px;}
+.edit-field.full{grid-column:1/-1;}
+.edit-field label{font-size:11px;font-weight:800;color:#687086;}
+.edit-field input,.edit-field textarea,.edit-field select{width:100%;padding:11px 12px;border:1px solid #e4d7ca;border-radius:11px;background:#fffaf5;font:inherit;font-size:13px;outline:none;}
+.edit-field textarea{min-height:70px;resize:vertical;}
+.edit-section{margin-top:16px;padding-top:14px;border-top:1px solid #eee2d7;}
+.edit-section h3{font-size:13px;margin-bottom:10px;}
+.image-picker{display:flex;gap:8px;align-items:center;}
+.image-picker input[type=file]{font-size:11px;padding:7px;background:#fffaf5;border:1px solid #e4d7ca;border-radius:10px;width:100%;}
+.edit-note{font-size:11px;color:#7b8293;line-height:1.5;margin-top:8px;}
+.edit-actions{display:flex;gap:10px;margin-top:18px;}
+.edit-actions button{flex:1;}
+@media(max-width:650px){.footer-tools{display:flex;margin:8px 0 0;justify-content:center;width:100%;}.footer{padding:18px 10px;}.edit-grid{grid-template-columns:1fr;}.edit-field.full{grid-column:auto;}}
+
+/* CHIKKU THEME + ICON SYSTEM */
+.action-icon{width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 20px;}
+.action-icon svg,.social svg{width:20px;height:20px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.social svg path,.social svg rect:first-child{fill:currentColor;stroke:none;}
+.social svg circle{stroke:currentColor;}
+.social{color:#8f603d;}
+.social:hover{color:#765036;}
+.actions-card{background:rgba(255,255,255,.86);}
+@media(min-width:851px){.actions-card .section-heading{margin-bottom:14px;}.actions-card{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;}.actions-card .section-heading{grid-column:1/-1;}.action-btn{margin-bottom:0;min-height:58px;}.action-btn:last-child{margin-bottom:0;}}
+@media(max-width:850px){.actions-card{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;}.actions-card .section-heading{grid-column:1/-1;}.action-btn{margin-bottom:0;min-height:58px;}.action-btn:last-child{grid-column:auto;}}
+@media(max-width:600px){.actions-card{padding:16px;gap:9px;}.action-btn{padding:12px 11px;min-height:56px;font-size:11.5px;border-radius:13px;}.action-left{gap:7px;}.action-icon{width:18px;height:18px;flex-basis:18px;}.action-icon svg{width:18px;height:18px;}.social-grid{grid-template-columns:repeat(4,1fr);gap:10px;}.social{width:48px;height:48px;margin:auto;}}
+@media(max-width:380px){.actions-card{gap:8px;}.action-btn{font-size:10.5px;padding:11px 9px;}.action-left{gap:5px;}.social{width:44px;height:44px;}}
+
+/* =========================
+   MOBILE NAV
+========================= */
+
+.mobile-menu{
+    display:none;
+
+    border:none;
+    background:#f0e4d8;
+
+    width:43px;
+    height:43px;
+
+    border-radius:13px;
+
+    font-size:20px;
+
+    cursor:pointer;
+}
+
+.menu-wrap{position:relative;flex:0 0 auto;}
+.mobile-menu{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:none;
+    background:#f0e4d8;
+    width:43px;height:43px;border-radius:13px;
+    font-size:28px;line-height:1;cursor:pointer;color:#665b53;
+    transition:.25s;
+}
+.mobile-menu:hover{background:#eadccf;transform:translateY(-1px);}
+.top-menu{
+    position:absolute;top:52px;right:0;min-width:175px;padding:7px;
+    background:rgba(255,255,255,.97);
+    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.9);border-radius:15px;
+    box-shadow:0 18px 45px rgba(65,48,120,.16);
+    display:none;z-index:3000;
+}
+.top-menu.active{display:block;animation:menuIn .18s ease;}
+.top-menu button{
+    width:100%;border:0;background:transparent;padding:11px 12px;
+    border-radius:10px;display:flex;align-items:center;gap:9px;
+    font:600 12px 'Poppins',sans-serif;color:#172033;text-align:left;cursor:pointer;
+}
+.top-menu button:hover{background:#f5ece4;}
+.top-menu button span{width:20px;text-align:center;}
+@keyframes menuIn{from{opacity:0;transform:translateY(-5px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1150px){
+
+    .dashboard{
+        grid-template-columns:
+            1fr 1.5fr;
+    }
+
+    .right-column{
+        grid-column:1 / -1;
+
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:850px){
+
+    .page{
+        width:94%;
+        margin:15px auto;
+    }
+
+    .navbar{
+        top:10px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+
+    .right-column{
+        grid-column:auto;
+
+        display:flex;
+    }
+
+    .profile-card{
+        max-width:100%;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .navbar{
+        height:68px;
+        padding:0 16px;
+        border-radius:18px;
+    }
+
+    .logo{
+        width:42px;
+        height:42px;
+        font-size:20px;
+    }
+
+    .brand-text h2{
+        font-size:14px;
+    }
+
+    .brand-text span{
+        font-size:8px;
+    }
+
+    .dashboard{
+        margin-top:15px;
+        gap:15px;
+    }
+
+    .card{
+        border-radius:20px;
+    }
+
+    .profile-cover{
+        height:190px;
+    }
+
+    .profile-logo{
+        width:95px;
+        height:95px;
+        bottom:-47px;
+    }
+
+    .profile-logo-inner{
+        width:74px;
+        height:74px;
+        font-size:35px;
+    }
+
+    .profile-content{
+        padding:65px 18px 20px;
+    }
+
+    .profile-content h1{
+        font-size:19px;
+    }
+
+    .section-card{
+        padding:17px;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-item{
+        height:115px;
+    }
+
+    .gallery-item:first-child{
+        grid-column:span 2;
+        grid-row:auto;
+        height:190px;
+    }
+
+    .links-grid{
+        grid-template-columns:
+            repeat(3,1fr);
+        gap:14px 8px;
+    }
+
+    .link-icon{
+        width:50px;
+        height:50px;
+    }
+
+    .action-btn{
+        padding:15px;
+    }
+
+    .social-grid{
+        grid-template-columns:
+            repeat(4,1fr);
+    }
+
+    .modal{
+        padding:12px;
+    }
+
+    .modal-box{
+        padding:17px;
+        border-radius:20px;
+    }
+
+    .room-item{
+        flex-wrap:wrap;
+    }
+
+    .room-image{
+        width:100%;
+        height:160px;
+    }
+
+    .room-info{
+        width:calc(100% - 0px);
+        flex:none;
+    }
+
+    .enquiry-small{
+        width:100%;
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONE
+========================= */
+
+@media(max-width:380px){
+
+    .page{
+        width:96%;
+    }
+
+    
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    border-radius:inherit;
+}
+
+.profile-logo-inner img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.brand-text{
+        display:none;
+    }
+
+    .gallery-item:first-child{
+        height:160px;
+    }
+
+    .gallery-item{
+        height:100px;
+    }
+
+    .link-icon{
+        width:46px;
+        height:46px;
+    }
+
+}
+
+
+
+/* =========================
+   IMAGE SIZE & RESPONSIVE FIX
+========================= */
+.logo{
+    width:52px;
+    height:52px;
+    padding:5px;
+    box-sizing:border-box;
+    overflow:hidden;
+    flex:0 0 52px;
+}
+
+.logo img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+    border-radius:10px;
+}
+
+.profile-cover{
+    min-height:215px;
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+}
+
+.profile-logo{
+    width:112px;
+    height:112px;
+    padding:5px;
+    box-sizing:border-box;
+}
+
+.profile-logo-inner{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+.profile-logo-inner img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+    border-radius:50%;
+}
+
+.gallery-item{
+    min-width:0;
+    overflow:hidden;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center;
+}
+
+.room-image{
+    width:132px;
+    height:96px;
+    flex:0 0 132px;
+    display:block;
+    object-fit:cover;
+    object-position:center;
+    border-radius:13px;
+}
+
+@media(max-width:600px){
+    .logo{
+        width:44px;
+        height:44px;
+        flex-basis:44px;
+        padding:4px;
+    }
+
+    .profile-cover{
+        height:190px;
+        min-height:190px;
+    }
+
+    .profile-logo{
+        width:100px;
+        height:100px;
+        bottom:-49px;
+    }
+
+    .room-image{
+        width:100%;
+        height:170px;
+        flex:0 0 100%;
+        object-fit:cover;
+    }
+}
+
+@media(max-width:380px){
+    .logo{
+        width:42px;
+        height:42px;
+        flex-basis:42px;
+    }
+
+    .profile-logo{
+        width:94px;
+        height:94px;
+        bottom:-46px;
+    }
+
+    .room-image{
+        height:155px;
+    }
+}
+
+
+/* FINAL RESPONSIVE FIXES */
+.action-btn{
+    min-width:0;
+    overflow:hidden;
+}
+.action-left{
+    min-width:0;
+    flex:1 1 auto;
+}
+.action-left > *:last-child{
+    min-width:0;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+}
+.action-btn > span:last-child{
+    flex:0 0 auto;
+    margin-left:6px;
+}
+@media(min-width:851px){
+    .actions-card .action-btn:last-child{grid-column:span 2;}
+}
+@media(max-width:850px){
+    .actions-card .action-btn:last-child{grid-column:1 / -1;}
+}
+.link-icon{color:#8f603d;}
+.link-item:hover .link-icon{color:#765036;}
+.social{overflow:hidden;}
+.social svg{width:22px;height:22px;}
+.social.instagram svg{stroke:currentColor;fill:none;}
+.editor-scroll{width:100%;max-height:calc(100vh - 120px);overflow-y:auto;overflow-x:hidden;}
+@media(max-width:650px){
+    .modal{padding:10px;}
+    .modal-box{width:100%;max-width:100%;max-height:calc(100vh - 20px);padding:16px;border-radius:20px;overflow-x:hidden;}
+    #editorModal .modal-box{max-height:calc(100vh - 20px);padding:14px;}
+    #editorModal .modal-header h2{font-size:16px;line-height:1.35;}
+    .edit-grid{grid-template-columns:1fr;gap:10px;}
+    .edit-field,.edit-section{min-width:0;}
+    .edit-field input,.edit-field textarea,.edit-field select{max-width:100%;font-size:13px;}
+    .image-picker{display:block;}
+    .image-picker input[type=file]{width:100%;max-width:100%;font-size:10px;}
+    .edit-actions{flex-direction:column;}
+    .edit-actions button{width:100%;min-height:46px;}
+}
+
+
+/* FINAL ICON / BADGE FIXES */
+.verified{width:20px;height:20px;flex:0 0 20px;display:inline-flex;align-items:center;justify-content:center;line-height:0;vertical-align:middle;}
+.verified svg{width:20px;height:20px;display:block;overflow:visible;}
+.verified svg path{vector-effect:non-scaling-stroke;}
+.link-icon.whatsapp-brand{color:#8f603d;}
+.link-icon.whatsapp-brand svg{width:22px;height:22px;fill:currentColor;stroke:none;}
+.social.instagram svg{width:22px;height:22px;fill:none;stroke:currentColor;}
+.social.instagram svg rect,.social.instagram svg circle{stroke:currentColor;}
+.social.instagram svg circle:last-child{fill:currentColor;stroke:none;}
+.social.copy-link svg{width:22px;height:22px;fill:none;stroke:currentColor;}
+.social.copy-link svg path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;}
+@media(min-width:851px){.actions-card{grid-template-columns:repeat(4,minmax(0,1fr));}.actions-card .action-btn{min-width:0;overflow:hidden;}.actions-card .action-left{min-width:0;overflow:hidden;}.actions-card .action-left{display:flex;align-items:center;gap:7px;}.actions-card .action-left{overflow-wrap:anywhere;word-break:break-word;}.actions-card .action-left::first-letter{font-size:inherit;}}
+@media(max-width:850px){.actions-card{grid-template-columns:repeat(2,minmax(0,1fr));}.actions-card .action-btn:last-child{grid-column:1 / -1;}}
+
+
+
+/* =========================
+   FULLSCREEN IMAGE LIGHTBOX
+========================= */
+.image-lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(10,12,20,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:10000;padding:24px;cursor:zoom-out;}
+.image-lightbox.active{display:flex;animation:fadeIn .22s ease;}
+.image-lightbox img{max-width:96vw;max-height:92vh;width:auto;height:auto;object-fit:contain;border-radius:14px;box-shadow:0 25px 80px rgba(0,0,0,.45);cursor:default;animation:lightboxImageIn .25s ease;}
+.image-lightbox-close{position:absolute;top:18px;right:20px;width:46px;height:46px;border:0;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:30px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;z-index:2;}
+.image-lightbox-close:hover{background:rgba(255,255,255,.24);transform:scale(1.05);}
+.gallery-item img,.room-image{cursor:zoom-in;}
+@keyframes lightboxImageIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+@media(max-width:600px){.image-lightbox{padding:12px}.image-lightbox img{max-width:96vw;max-height:88vh;border-radius:10px}.image-lightbox-close{top:12px;right:12px;width:42px;height:42px;font-size:27px}}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<style>
+/* Final icon refinements */
+.link-icon.whatsapp-brand{color:#8f603d !important;}
+.link-icon.whatsapp-brand svg{color:inherit !important;fill:currentColor !important;}
+.social.instagram svg{width:22px;height:22px;display:block;overflow:visible;}
+.social.instagram svg rect{fill:none;stroke:currentColor;stroke-width:1.9;}
+.social.instagram svg circle:first-of-type{fill:none;stroke:currentColor;stroke-width:1.9;}
+.social.instagram svg circle:last-of-type{fill:currentColor;stroke:none;}
+.social.copy-link svg{width:22px;height:22px;display:block;overflow:visible;}
+.social.copy-link svg path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+
+<style>
+/* FINAL USER REQUEST FIXES */
+.profile-content h1{gap:6px;flex-wrap:nowrap;}
+.verified{width:23px !important;height:23px !important;flex:0 0 23px !important;display:inline-flex !important;align-items:center;justify-content:center;vertical-align:middle;line-height:0;}
+.verified img{width:23px !important;height:23px !important;display:block;object-fit:contain;object-position:center;}
+@media(min-width:851px){
+ .actions-card{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:10px !important;}
+ .actions-card .section-heading{grid-column:1/-1 !important;}
+ .actions-card .action-btn{min-width:0;width:100%;min-height:58px;margin:0;padding:13px 14px;}
+ .actions-card .action-btn:last-child{grid-column:1/-1 !important;}
+}
+@media(max-width:850px){
+ .actions-card{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:9px !important;}
+ .actions-card .section-heading{grid-column:1/-1 !important;}
+ .actions-card .action-btn{min-width:0;width:100%;min-height:58px;margin:0;padding:12px 11px;}
+ .actions-card .action-btn:last-child{grid-column:1/-1 !important;}
+}
+.action-left{min-width:0;overflow:hidden;}
+.action-left > *:last-child{min-width:0;overflow-wrap:anywhere;word-break:break-word;}
+.action-btn > span:last-child{flex:0 0 auto;margin-left:6px;}
+.mobile-menu{width:43px !important;height:43px !important;padding:0 !important;border:1px solid rgba(143,96,61,.12) !important;border-radius:14px !important;background:#f0e4d8 !important;color:#8f603d !important;box-shadow:0 6px 16px rgba(143,96,61,.10);}
+.mobile-menu svg{width:23px;height:23px;display:block;}
+.mobile-menu svg path{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;transition:.25s;}
+.mobile-menu:hover{background:#eadccf !important;color:#765036 !important;transform:translateY(-1px) scale(1.02);}
+.mobile-menu[aria-expanded="true"] svg path{stroke-width:2;}
+
+<style>
+.top-menu button .menu-item-icon{width:20px;height:20px;flex:0 0 20px;display:inline-flex;align-items:center;justify-content:center;color:#8f603d;}
+.top-menu button .menu-item-icon svg{width:18px;height:18px;display:block;}
+.top-menu button .menu-item-icon svg circle,.top-menu button .menu-item-icon svg path{stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.top-menu button .menu-item-text{width:auto;text-align:left;color:#172033;}
+.top-menu button:hover .menu-item-icon{color:#765036;}
+</style>
+</head>
+
+
+<body>
+
+<div class="page">
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="brand">
+
+        <div class="logo">
+            <img id="logoImage" src="logo.png" alt="JANNA GENTS HOSTEL Logo">
+        </div>
+
+        <div class="brand-text">
+
+            <h2 id="navHostelName">JANNA GENTS HOSTEL</h2>
+
+            <span>
+                FOOD & ACCOMMODATION
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#rooms">Rooms</a>
+
+        <a href="#facilities">Facilities</a>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+
+    <div class="menu-wrap">
+        <button class="mobile-menu" type="button" aria-label="More options" aria-expanded="false" onclick="toggleTopMenu(event)">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 7h14M5 12h14M5 17h14"></path>
+    </svg>
+</button>
+        <div class="top-menu" id="topMenu">
+            <button type="button" onclick="openWebpageWhatsApp(event); closeTopMenu();">
+                <span class="menu-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none"/><path d="M3.8 12h16.4M12 3.5c2.1 2.3 3.2 5.1 3.2 8.5S14.1 18.2 12 20.5c-2.1-2.3-3.2-5.1-3.2-8.5S9.9 5.8 12 3.5Z" fill="none"/></svg></span>
+                <span class="menu-item-text">Need Webpage</span>
+            </button>
+            <button type="button" onclick="openEditLogin(event); closeTopMenu();">
+                <span class="menu-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m4.5 19.5 3.1-.7L18.2 8.2a2.1 2.1 0 0 0-3-3L4.6 15.9l-.1 3.6Z" fill="none"/><path d="m13.9 6.1 4 4" fill="none"/></svg></span>
+                <span class="menu-item-text">Edit Page</span>
+            </button>
+        </div>
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     DASHBOARD
+========================= -->
+
+<div class="dashboard" id="home">
+
+
+<!-- =========================
+     LEFT PROFILE
+========================= -->
+
+<div class="card profile-card">
+
+    <div class="profile-cover">
+
+        <div class="profile-logo">
+
+            <div class="profile-logo-inner">
+                <img src="logo.png" alt="JANNA GENTS HOSTEL Logo">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="profile-content">
+
+        <h1 id="hostelName">
+
+            JANNA GENTS HOSTEL
+
+            <span class="verified" aria-label="Verified"><img src="b.png" alt="Verified"></span>
+
+        </h1>
+
+
+        <p class="profile-subtitle" id="hostelSubtitle">
+            Single / 2 / 3 / 4 / 6 Sharing Rooms
+        </p>
+
+
+        <div class="about-title" id="about">
+            ABOUT HOSTEL
+        </div>
+
+
+        <p class="about-text" id="aboutText">
+
+            Homely Food | Free Unlimited Wi-Fi |
+            Parking Facilities | 24/7 CCTV Surveillance |
+            Food & Accommodation
+
+        </p>
+
+
+        <button
+            class="primary-btn"
+            onclick="openDescriptionModal()"
+        >
+
+            📖 Description
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     CENTER
+========================= -->
+
+<div class="center-column">
+
+
+<!-- GALLERY -->
+
+<div class="card section-card" id="rooms">
+
+    <div class="section-heading">
+
+        <h2>
+            GALLERY
+        </h2>
+
+        <div class="line"></div>
+
+    </div>
+
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+
+            <img
+                id="galleryImg1" src="3.jpg"
+                alt=""
+            >
+
+            <div class="gallery-overlay"></div>
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                id="galleryImg2" src="s.jpg"
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                id="galleryImg3" src="2.jpg"
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                id="galleryImg4" src="4.jpg"
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                id="galleryImg5" src="6.jpg"
+                alt=""
+            >
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- CONTACT LINKS -->
+
+<div class="card section-card" id="contact">
+
+    <div class="section-heading">
+
+        <h2>
+            CONTACT & LINKS
+        </h2>
+
+        <div class="line"></div>
+
+    </div>
+
+
+    <div class="links-grid">
+
+
+        <!-- CALL -->
+
+        <a
+            id="mobileLink" href="tel:8086311143"
+            class="link-item"
+        >
+
+            <div class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.7 3.8l2.2-.6c.7-.2 1.4.2 1.7.8l1.1 2.6c.3.7.1 1.4-.5 1.9l-1.4 1.1c1 2.1 2.6 3.7 4.7 4.7l1.1-1.4c.5-.6 1.2-.8 1.9-.5l2.6 1.1c.7.3 1 .9.8 1.7l-.6 2.2c-.2.7-.8 1.2-1.5 1.2C10.2 18.6 5.4 13.8 4.5 5.3c-.1-.7.4-1.3 1.2-1.5Z"/></svg></div>
+
+            <span id="mobileLabel">
+                Mobile
+            </span>
+
+        </a>
+
+
+        <!-- WHATSAPP -->
+
+        <a
+            id="whatsappLink" href="https://wa.me/918086311143"
+            target="_blank"
+            class="link-item"
+        >
+
+            <div class="link-icon whatsapp-brand" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.52 3.48A11.9 11.9 0 0 0 12.05 0C5.47 0 .12 5.35.12 11.93c0 2.1.55 4.15 1.6 5.96L0 24l6.25-1.64a11.9 11.9 0 0 0 5.8 1.5h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.18-1.24-6.17-3.47-8.45Zm-8.47 18.1h-.01a9.66 9.66 0 0 1-4.93-1.35l-.35-.2-3.71.97.99-3.62-.23-.37a9.68 9.68 0 1 1 8.24 4.57Zm5.31-7.26c-.29-.14-1.72-.85-1.99-.95-.27-.1-.46-.14-.65.15-.19.29-.75.95-.92 1.14-.17.19-.34.22-.63.07-.29-.14-1.23-.45-2.35-1.44-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.49.1-.19.05-.37-.02-.51-.07-.14-.65-1.57-.89-2.15-.24-.56-.48-.48-.65-.49h-.55c-.19 0-.5.07-.76.37-.26.29-1  .98-1 2.39s1.02 2.77 1.17 2.96c.14.19 2 3.06 4.86 4.29.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.72-.7 1.96-1.37.24-.67.24-1.25.17-1.37-.07-.12-.26-.19-.55-.34Z"/></svg></div>
+
+            <span id="whatsappLabel">
+                WhatsApp
+            </span>
+
+        </a>
+
+
+        <!-- EMAIL -->
+
+        <a
+            id="emailLink" href="mailto:jannahostel@gmail.com"
+            class="link-item"
+        >
+
+            <div class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="m5 7 7 5 7-5"/></svg></div>
+
+            <span id="emailLabel">
+                Email
+            </span>
+
+        </a>
+
+
+        <!-- ADDRESS -->
+
+        <a
+            href="#"
+            onclick="openAddressModal();return false"
+            class="link-item"
+        >
+
+            <div class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s6.5-5.8 6.5-11.5a6.5 6.5 0 1 0-13 0C5.5 15.2 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.2"/></svg></div>
+
+            <span>
+                Address
+            </span>
+
+        </a>
+
+
+        <!-- BOOK -->
+
+        <a
+            href="#"
+            onclick="openBookModal();return false"
+            class="link-item"
+        >
+
+            <div class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3.5" width="14" height="17" rx="2"/><path d="M8.5 8h7M8.5 12h7M8.5 16h4"/></svg></div>
+
+            <span>
+                Enquiry
+            </span>
+
+        </a>
+
+
+        <!-- REVIEW -->
+
+        <a
+            href="https://search.google.com/local/writereview?placeid=ChIJGyK5Jg0NCDsROxzElXIbqWU"
+            target="_blank"
+            class="link-item"
+        >
+
+            <div class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg></div>
+
+            <span>
+                Review
+            </span>
+
+        </a>
+<!-- SAVE -->
+
+        <a
+            href="#"
+            class="link-item"
+            onclick="saveContact(event)"
+        >
+
+            <div class="link-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.3"/><path d="M5.2 20c.7-3.2 3-5 6.8-5s6.1 1.8 6.8 5"/></svg></div>
+
+            <span>
+                Save Contact
+            </span>
+
+        </a>
+
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+     RIGHT SIDE
+========================= -->
+
+<div class="right-column">
+
+
+<!-- QUICK ACTIONS -->
+
+<div class="card actions-card" id="facilities">
+
+    <div class="section-heading">
+
+        <h2>
+            QUICK ACTIONS
+        </h2>
+
+        <div class="line"></div>
+
+    </div>
+
+
+    <!-- PAYMENT -->
+    <button class="action-btn" onclick="openBankModal()">
+        <div class="action-left"><span class="action-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18M7 14h4"/></svg></span> Payment</div>
+        <span>›</span>
+    </button>
+
+    <!-- SAVE CONTACT -->
+    <button class="action-btn" onclick="saveContact(event)"><div class="action-left"><span class="action-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c.7-3.2 3.1-5 7-5s6.3 1.8 7 5" fill="none"/></svg></span> Save Contact</div><span>›</span></button>
+
+    <button class="action-btn" onclick="openAutoReplyModal()"><div class="action-left"><span class="action-icon"><svg viewBox="0 0 24 24"><path d="M5 5h14v10H9l-4 4V5Z" fill="none"/></svg></span> Auto Reply</div><span>›</span></button>
+
+    <button class="action-btn" onclick="openWhatsAppModal()"><div class="action-left"><span class="action-icon"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z" fill="none"/><path d="M9 9.2c.3-.4.5-.4.8-.1l.8 1c.2.2.2.5 0 .8l-.4.5c.6 1.1 1.4 1.8 2.5 2.4l.5-.4c.3-.2.6-.2.8 0l1 .8c.3.3.2.6-.1.9-.4.5-1 .7-1.6.5-2.6-.8-4.5-2.7-5.3-5.3-.2-.6 0-1.2.5-1.6Z"/></svg></span> Quick WhatsApp</div><span>›</span></button>
+
+    <button class="action-btn" onclick="openAddressModal()"><div class="action-left"><span class="action-icon"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="none"/><circle cx="12" cy="9" r="2.2" fill="none"/></svg></span> Business Address</div><span>›</span></button>
+
+    <button class="action-btn" onclick="openBankModal()"><div class="action-left"><span class="action-icon"><svg viewBox="0 0 24 24"><path d="M3 9 12 4l9 5v2H3V9Zm2 4v5m4-5v5m6-5v5m4-5v5M3 20h18" fill="none"/></svg></span> Bank Details</div><span>›</span></button>
+
+    <button class="action-btn" onclick="openLocation()"><div class="action-left"><span class="action-icon"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z" fill="none"/><circle cx="12" cy="9" r="2.2" fill="none"/></svg></span> Location</div><span>›</span></button>
+
+    <button class="action-btn" onclick="openDescriptionModal()"><div class="action-left"><span class="action-icon"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z" fill="none"/><path d="M8 8h8M8 12h8M8 16h5" fill="none"/></svg></span> Description</div><span>›</span></button>
+
+    <button class="action-btn" onclick="openRoomModal()"><div class="action-left"><span class="action-icon"><svg viewBox="0 0 24 24"><path d="M4 18v-6h16v6M4 15h16M7 12V8h6a3 3 0 0 1 3 3v1" fill="none"/></svg></span> View Room</div><span>›</span></button>
+
+    <button class="action-btn price-btn" onclick="openPriceModal()"><div class="action-left"><span class="action-icon"><svg viewBox="0 0 24 24"><path d="M6 5h12v14H6z" fill="none"/><path d="M9 9h6M9 13h4" fill="none"/><path d="M8 5V3m8 2V3" fill="none"/></svg></span> View Price</div><span>›</span></button>
+
+    <button class="action-btn" onclick="openBookModal()"><div class="action-left"><span class="action-icon"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" fill="none"/><path d="M8 3v4m8-4v4M4 10h16" fill="none"/></svg></span> Book / Enquiry</div><span>›</span></button>
+
+</div>
+
+
+
+<div class="card section-card" style="padding:16px 20px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+        <strong style="font-size:15px;">🕒 24×7 Always Open</strong>
+        <span style="color:#368b5b;font-weight:800;">● Open Now</span>
+    </div>
+</div>
+
+
+<!-- SOCIAL SHARE -->
+
+<div class="card social-card">
+
+    <div class="section-heading">
+
+        <h2>
+            SOCIAL SHARE
+        </h2>
+
+        <div class="line"></div>
+
+    </div>
+
+
+    <div class="social-grid">
+
+        <a href="https://wa.me/918086311143" target="_blank" class="social" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.08 0C5.55 0 .24 5.3.24 11.83c0 2.08.54 4.1 1.58 5.88L.14 24l6.43-1.65a11.83 11.83 0 0 0 5.51 1.36h.01c6.53 0 11.84-5.31 11.84-11.84 0-3.16-1.23-6.13-3.43-8.37ZM12.09 21.7h-.01a9.83 9.83 0 0 1-5.01-1.37l-.36-.21-3.82.98 1.02-3.72-.23-.38a9.84 9.84 0 1 1 8.41 4.7Zm5.4-7.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.27-.47-2.42-1.5-.9-.8-1.5-1.78-1.68-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.03 1-1.03 2.45s1.05 2.84 1.2 3.04c.15.2 2.07 3.16 5.01 4.43.7.3 1.25.48 1.68.62.71.23 1.35.2 1.86.12.57-.08 1.76-.72 2.01-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
+        </a>
+
+        <a id="socialFacebook" href="#" class="social" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-8h2.7l.4-3h-3.1V8.1c0-.87.24-1.46 1.5-1.46h1.7V3.96c-.3-.04-1.32-.13-2.52-.13-2.49 0-4.2 1.52-4.2 4.31V10H7.3v3H10v8h3.6Z"/></svg>
+        </a>
+
+        <a id="socialInstagram" href="https://www.instagram.com/janna_gents_hostel" target="_blank" rel="noopener" class="social instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.35" cy="6.65" r="1.15" fill="currentColor" stroke="none"/></svg>
+        </a>
+
+        <a href="#" class="social copy-link" onclick="copyWebsite(event)" aria-label="Copy Webpage">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13.9a3.5 3.5 0 0 0 5 0l2.2-2.2a3.5 3.5 0 0 0-5-5L11 7.9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 10.1a3.5 3.5 0 0 0-5 0l-2.2 2.2a3.5 3.5 0 0 0 5 5l1.2-1.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    © 2026 <span id="footerHostelName">JANNA GENTS HOSTEL</span>.
+    All Rights Reserved.
+
+
+</footer>
+
+</div>
+
+
+
+
+<!-- =========================
+     DESCRIPTION MODAL
+========================= -->
+<div class="modal" id="descriptionModal" onclick="closeOutside(event,'descriptionModal')">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h2>📖 About JANNA GENTS HOSTEL</h2>
+            <button class="close" onclick="closeModal('descriptionModal')">×</button>
+        </div>
+
+        <div class="info-card">
+            <h3 id="descTitle">🏠 Comfortable Food & Accommodation</h3>
+            <p id="descMainText">JANNA GENTS HOSTEL provides food and accommodation with a comfortable hostel environment for students and working individuals.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>🍽️ Homely Food</h3>
+            <p>Homely food is available as part of the hostel's food and accommodation service.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>📶 Free Unlimited Wi-Fi</h3>
+            <p>Residents can use free unlimited Wi-Fi for study, work and everyday online needs.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>🅿️ Parking Facilities</h3>
+            <p>Parking facility is available for residents.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>📹 24/7 CCTV Surveillance</h3>
+            <p>The hostel provides 24/7 CCTV surveillance as part of its facilities.</p>
+        </div>
+
+        <div class="info-card">
+            <h3>🛏️ Room Options</h3>
+            <ul class="info-list">
+                <li>Single Sharing</li>
+                <li>2 Sharing</li>
+                <li>3 Sharing</li>
+                <li>4 Sharing</li>
+                <li>6 Sharing</li>
+            </ul>
+        </div>
+
+        <div class="info-card">
+            <h3>📍 Location</h3>
+            <p id="descAddress">St.Francis church road , kaloor- kathrukadavu, 682017.</p>
+        </div>
+
+        <button class="modal-action" onclick="openLocation()">📍 Open Google Maps</button>
+        <button class="modal-action secondary" onclick="closeModal('descriptionModal');openRoomModal()">🛏️ View Room Options</button>
+    </div>
+</div>
+
+<!-- =========================
+     BUSINESS ADDRESS MODAL
+========================= -->
+<div class="modal" id="addressModal" onclick="closeOutside(event,'addressModal')">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h2>📍 Business Address</h2>
+            <button class="close" onclick="closeModal('addressModal')">×</button>
+        </div>
+        <div class="info-card">
+            <h3>JANNA GENTS HOSTEL</h3>
+            <p>St.Francis church road , kaloor- kathrukadavu, 682017</p>
+        </div>
+        <button class="modal-action" onclick="copyAddress()">📋 Copy Address</button>
+        <button class="modal-action secondary" onclick="openLocation()">📍 Google Maps</button>
+    </div>
+</div>
+
+<!-- =========================
+     QUICK WHATSAPP MODAL
+========================= -->
+<div class="modal" id="whatsappModal" onclick="closeOutside(event,'whatsappModal')">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h2>💬 Quick WhatsApp Message</h2>
+            <button class="close" onclick="closeModal('whatsappModal')">×</button>
+        </div>
+        <div class="form-group"><label>Your Name</label><input id="waName" placeholder="Enter your name"></div>
+        <div class="form-group"><label>Your Place (Optional)</label><input id="waPlace" placeholder="Enter your place (optional)"></div>
+        <div class="form-group"><label>Message</label><textarea id="waMessage" placeholder="Enter your message"></textarea></div>
+        <button class="modal-action" onclick="sendQuickWhatsApp()">💬 Send via WhatsApp</button>
+    </div>
+</div>
+
+<!-- =========================
+     BOOK NOW MODAL
+========================= -->
+<div class="modal" id="bookModal" onclick="closeOutside(event,'bookModal')">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h2>📅 Book Now</h2>
+            <button class="close" onclick="closeModal('bookModal')">×</button>
+        </div>
+        <div class="form-group"><label>Your Name *</label><input id="bookName" placeholder="Enter your name"></div>
+        <div class="form-group"><label>Room Type *</label>
+            <select id="bookRoom">
+                <option value="Single Sharing">Single Sharing</option>
+                <option value="2 Sharing">2 Sharing</option>
+                <option value="3 Sharing">3 Sharing</option>
+                <option value="4 Sharing">4 Sharing</option>
+                <option value="6 Sharing">6 Sharing</option>
+            </select>
+        </div>
+        <div class="form-group"><label>Preferred Date *</label><input id="bookDate" type="date"></div>
+        <div class="form-group"><label>Preferred Time *</label><input id="bookTime" type="time"></div>
+        <div class="form-group"><label>Optional Notes / Message</label><textarea id="bookNotes" placeholder="Describe any details or questions..."></textarea></div>
+        <button class="modal-action" onclick="sendBooking()">💬 Book via WhatsApp</button>
+    </div>
+</div>
+
+<!-- =========================
+     BANK DETAILS MODAL
+========================= -->
+<div class="modal" id="bankModal" onclick="closeOutside(event,'bankModal')">
+    <div class="modal-box payment-modal-box" style="text-align:center">
+        <div class="modal-header">
+            <h2>Payment</h2>
+            <button class="close" onclick="closeModal('bankModal')">×</button>
+        </div>
+
+        <div class="info-card payment-qr-card">
+            <h3>Scan to Pay</h3>
+            <div id="paymentQRCode" style="display:flex;justify-content:center;margin:16px 0 18px"></div>
+            <p class="info-modal-text">Scan this QR code using any UPI app to make a payment.</p>
+        </div>
+
+        <div class="info-card" style="text-align:left">
+            <div class="bank-row">
+                <div>
+                    <div class="bank-label">UPI ID</div>
+                    <div class="bank-value">sainul.abid69-19@okhdfcbank</div>
+                </div>
+                <button class="copy-mini" onclick="copyText('sainul.abid69-19@okhdfcbank')" aria-label="Copy UPI ID">Copy</button>
+            </div>
+            <div class="bank-row">
+                <div>
+                    <div class="bank-label">Mobile Number</div>
+                    <div class="bank-value">9562020100</div>
+                </div>
+                <button class="copy-mini" onclick="copyText('9562020100')" aria-label="Copy mobile number">Copy</button>
+            </div>
+        </div>
+
+        <button class="modal-action" onclick="copyText('sainul.abid69-19@okhdfcbank')">Copy UPI ID</button>
+    </div>
+</div>
+
+<!-- =========================
+     AUTO REPLY MODAL
+========================= -->
+<div class="modal" id="autoReplyModal" onclick="closeOutside(event,'autoReplyModal')">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h2>💬 Auto Reply</h2>
+            <button class="close" onclick="closeModal('autoReplyModal')">×</button>
+        </div>
+        <div class="info-card">
+            <h3>English</h3>
+            <p>Hi, welcome to “JANNA GENTS HOSTEL”.<br>Visit our website for more details.</p>
+        </div>
+        <div class="info-card">
+            <h3>Malayalam</h3>
+            <p>Hi, JANNA GENTS HOSTEL ലേക്ക് സ്വാഗതം. കൂടുതൽ വിവരങ്ങൾക്ക് ഞങ്ങളുടെ website സന്ദർശിക്കുക.</p>
+        </div>
+        <div class="info-card">
+            <h3>Hindi</h3>
+            <p>Hi, “JANNA GENTS HOSTEL” में आपका स्वागत है। अधिक जानकारी के लिए हमारी website देखें।</p>
+        </div>
+        <button class="modal-action" onclick="copyAutoReply()">📋 Copy English Message</button>
+        <button class="modal-action secondary" onclick="window.open('https://wa.me/918086311143','_blank')">💬 Open WhatsApp</button>
+    </div>
+</div>
+
+<!-- =========================
+     QR MODAL
+========================= -->
+<div class="modal" id="qrModal" onclick="closeOutside(event,'qrModal')">
+    <div class="modal-box" style="text-align:center">
+        <div class="modal-header">
+            <h2>▦ Scan or Download QR</h2>
+            <button class="close" onclick="closeModal('qrModal')">×</button>
+        </div>
+        <div id="qrcode" style="display:flex;justify-content:center;margin:15px 0"></div>
+        <h3>JANNA GENTS HOSTEL</h3>
+        <p class="info-modal-text" id="qrUrlText"></p>
+        <button class="modal-action" onclick="downloadQR()">⬇️ Download QR</button>
+        <button class="modal-action secondary" onclick="closeModal('qrModal')">Close</button>
+    </div>
+</div>
+
+<!-- =========================
+     ROOM MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="roomModal"
+    onclick="closeOutside(event,'roomModal')"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>
+                🛏️ Room Options
+            </h2>
+
+            <button
+                class="close"
+                onclick="closeModal('roomModal')"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="room-list">
+
+
+            <!-- SINGLE -->
+
+            <div class="room-item">
+
+                <img
+                    id="roomImg1" class="room-image" src="s.jpg"
+                    alt="Single Sharing Room"
+                >
+
+                <div class="room-info">
+
+                    <h3 id="r1_display_name">
+                        Single Sharing
+                    </h3>
+
+                    <p id="r1_display_desc">
+                        Comfortable private room
+                    </p>
+
+                </div>
+
+                <button
+                    class="enquiry-small"
+                    onclick="roomEnquiry('Single Sharing')"
+                >
+                    Enquiry
+                </button>
+
+            </div>
+
+
+            <!-- 2 SHARING -->
+
+            <div class="room-item">
+
+                <img
+                    id="roomImg2" class="room-image" src="2.jpg"
+                    alt="2 Sharing Room"
+                >
+
+                <div class="room-info">
+
+                    <h3 id="r2_display_name">
+                        2 Sharing
+                    </h3>
+
+                    <p>
+                        Comfortable room for two
+                    </p>
+
+                </div>
+
+                <button
+                    class="enquiry-small"
+                    onclick="roomEnquiry('2 Sharing')"
+                >
+                    Enquiry
+                </button>
+
+            </div>
+
+
+            <!-- 3 SHARING -->
+
+            <div class="room-item">
+
+                <img
+                    id="roomImg3" class="room-image" src="3.jpg"
+                    alt="3 Sharing Room"
+                >
+
+                <div class="room-info">
+
+                    <h3 id="r3_display_name">
+                        3 Sharing
+                    </h3>
+
+                    <p>
+                        Comfortable room for three
+                    </p>
+
+                </div>
+
+                <button
+                    class="enquiry-small"
+                    onclick="roomEnquiry('3 Sharing')"
+                >
+                    Enquiry
+                </button>
+
+            </div>
+
+
+            <!-- 4 SHARING -->
+
+            <div class="room-item">
+
+                <img
+                    id="roomImg4" class="room-image" src="4.jpg"
+                    alt="4 Sharing Room"
+                >
+
+                <div class="room-info">
+
+                    <h3 id="r4_display_name">
+                        4 Sharing
+                    </h3>
+
+                    <p id="r3_display_desc">
+                        Spacious shared accommodation
+                    </p>
+
+                </div>
+
+                <button
+                    class="enquiry-small"
+                    onclick="roomEnquiry('4 Sharing')"
+                >
+                    Enquiry
+                </button>
+
+            </div>
+
+
+            <!-- 6 SHARING -->
+
+            <div class="room-item">
+
+                <img
+                    id="roomImg6" class="room-image" src="6.jpg"
+                    alt="6 Sharing Room"
+                >
+
+                <div class="room-info">
+
+                    <h3 id="r6_display_name">
+                        6 Sharing
+                    </h3>
+
+                    <p id="r6_display_desc">
+                        Budget-friendly shared room
+                    </p>
+
+                </div>
+
+                <button
+                    class="enquiry-small"
+                    onclick="roomEnquiry('6 Sharing')"
+                >
+                    Enquiry
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     PRICE MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="priceModal"
+    onclick="closeOutside(event,'priceModal')"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>
+                💰 Room Prices
+            </h2>
+
+            <button
+                class="close"
+                onclick="closeModal('priceModal')"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="price-list">
+
+
+            <div class="price-row">
+
+                <h3 id="r1_price_name">
+                    Single Sharing
+                </h3>
+
+                <div class="price" id="r1_display_price">
+                    ₹8,000
+                </div>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <h3 id="r2_price_name">
+                    2 Sharing
+                </h3>
+
+                <div class="price" id="r2_display_price">
+                    ₹7,000
+                </div>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <h3 id="r3_price_name">
+                    3 Sharing
+                </h3>
+
+                <div class="price" id="r3_display_price">
+                    ₹6,500
+                </div>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <h3 id="r4_price_name">
+                    4 Sharing
+                </h3>
+
+                <div class="price" id="r4_display_price">
+                    ₹6,000
+                </div>
+
+            </div>
+
+
+            <div class="price-row">
+
+                <h3 id="r6_price_name">
+                    6 Sharing
+                </h3>
+
+                <div class="price" id="r6_display_price">
+                    ₹5,500
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            class="primary-btn"
+            onclick="openEnquiry()"
+        >
+
+            💬 Enquire About Price
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- =========================
+     NEED WEBPAGE / EDIT PAGE
+========================= -->
+<div class="modal" id="editLoginModal" onclick="closeOutside(event,'editLoginModal')">
+  <div class="modal-box">
+    <div class="modal-header"><h2>🔐 Edit Page</h2><button class="close" onclick="closeModal('editLoginModal')">×</button></div>
+    <p class="info-modal-text">Enter the password to open the editor.</p>
+    <div class="edit-field"><label>Password</label><input id="editPassword" type="password" autocomplete="off" placeholder="Enter password"></div>
+    <button class="primary-btn" style="margin-top:14px;width:100%;" onclick="verifyEditPassword()">🔓 Open Edit Page</button>
+  </div>
+</div>
+
+<div class="modal" id="webpageModal" onclick="closeOutside(event,'webpageModal')">
+  <div class="modal-box">
+    <div class="modal-header"><h2>🌐 Need Webpage</h2><button class="close" onclick="closeModal('webpageModal')">×</button></div>
+    <p class="info-modal-text">Your WhatsApp message is ready.</p>
+    <button class="primary-btn" style="width:100%;" onclick="sendNeedWebpageWhatsApp()">💬 Open WhatsApp</button>
+  </div>
+</div>
+
+<div class="modal" id="editorModal" onclick="closeOutside(event,'editorModal')">
+  <div class="modal-box" style="max-width:820px;max-height:88vh;overflow:auto;">
+    <div class="modal-header"><h2>✏️ Edit Digital Visiting Card</h2><button class="close" onclick="closeModal('editorModal')">×</button></div>
+    <div class="edit-grid">
+      <div class="edit-field"><label>Hostel Name</label><input id="e_name"></div>
+      <div class="edit-field"><label>Subtitle</label><input id="e_subtitle"></div>
+      <div class="edit-field full"><label>About Hostel</label><textarea id="e_about"></textarea></div>
+      <div class="edit-field"><label>Mobile / WhatsApp Number</label><input id="e_phone" inputmode="tel"></div>
+      <div class="edit-field"><label>Email</label><input id="e_email" type="email"></div>
+      <div class="edit-field full"><label>Address</label><textarea id="e_address"></textarea></div>
+      <div class="edit-field full"><label>Google Review URL</label><input id="e_review"></div>
+
+      <div class="edit-section full"><h3>🖼️ Images</h3></div>
+      <div class="edit-field"><label>Logo</label><div class="image-picker"><input id="file_logo" type="file" accept="image/*" onchange="previewImage(this,'logoImage','logo')"></div></div>
+      <div class="edit-field"><label>Cover</label><div class="image-picker"><input id="file_cover" type="file" accept="image/*" onchange="previewImage(this,null,'cover')"></div></div>
+      <div class="edit-field"><label>Single Room Image</label><input id="file_r1" type="file" accept="image/*" onchange="previewImage(this,'roomImg1','room1')"></div>
+      <div class="edit-field"><label>2 Share Room Image</label><input id="file_r2" type="file" accept="image/*" onchange="previewImage(this,'roomImg2','room2')"></div>
+      <div class="edit-field"><label>3 Share Room Image</label><input id="file_r3" type="file" accept="image/*" onchange="previewImage(this,'roomImg3','room3')"></div>
+      <div class="edit-field"><label>4 Share Room Image</label><input id="file_r4" type="file" accept="image/*" onchange="previewImage(this,'roomImg4','room4')"></div>
+      <div class="edit-field"><label>6 Share Room Image</label><input id="file_r6" type="file" accept="image/*" onchange="previewImage(this,'roomImg6','room6')"></div>
+      <div class="edit-field"><label>Gallery 1</label><input id="file_g1" type="file" accept="image/*" onchange="previewImage(this,'galleryImg1','gallery1')"></div>
+      <div class="edit-field"><label>Gallery 2</label><input id="file_g2" type="file" accept="image/*" onchange="previewImage(this,'galleryImg2','gallery2')"></div>
+      <div class="edit-field"><label>Gallery 3</label><input id="file_g3" type="file" accept="image/*" onchange="previewImage(this,'galleryImg3','gallery3')"></div>
+      <div class="edit-field"><label>Gallery 4</label><input id="file_g4" type="file" accept="image/*" onchange="previewImage(this,'galleryImg4','gallery4')"></div>
+      <div class="edit-field"><label>Gallery 5</label><input id="file_g5" type="file" accept="image/*" onchange="previewImage(this,'galleryImg5','gallery5')"></div>
+
+      <div class="edit-section full"><h3>🛏️ Room Details & Prices</h3></div>
+      <div class="edit-field"><label>Single Name</label><input id="r1_name"></div><div class="edit-field"><label>Single Price</label><input id="r1_price"></div><div class="edit-field full"><label>Single Description</label><input id="r1_desc"></div>
+      <div class="edit-field"><label>2 Share Name</label><input id="r2_name"></div><div class="edit-field"><label>2 Share Price</label><input id="r2_price"></div><div class="edit-field full"><label>2 Share Description</label><input id="r2_desc"></div>
+      <div class="edit-field"><label>3 Share Name</label><input id="r3_name"></div><div class="edit-field"><label>3 Share Price</label><input id="r3_price"></div><div class="edit-field full"><label>3 Share Description</label><input id="r3_desc"></div>
+      <div class="edit-field"><label>4 Share Name</label><input id="r4_name"></div><div class="edit-field"><label>4 Share Price</label><input id="r4_price"></div><div class="edit-field full"><label>4 Share Description</label><input id="r4_desc"></div>
+      <div class="edit-field"><label>6 Share Name</label><input id="r6_name"></div><div class="edit-field"><label>6 Share Price</label><input id="r6_price"></div><div class="edit-field full"><label>6 Share Description</label><input id="r6_desc"></div>
+
+      <div class="edit-section full"><h3>🏦 Bank Details</h3></div>
+      <div class="edit-field"><label>Account Holder</label><input id="bank_holder"></div><div class="edit-field"><label>Account Number</label><input id="bank_account"></div><div class="edit-field"><label>IFSC</label><input id="bank_ifsc"></div><div class="edit-field"><label>Bank</label><input id="bank_name"></div><div class="edit-field"><label>Branch</label><input id="bank_branch"></div>
+
+      <div class="edit-section full"><h3>🔗 Social Links</h3></div>
+      <div class="edit-field"><label>Facebook</label><input id="social_facebook"></div><div class="edit-field"><label>Instagram</label><input id="social_instagram"></div><div class="edit-field"><label>LinkedIn</label><input id="social_linkedin"></div><div class="edit-field"><label>X</label><input id="social_x"></div><div class="edit-field"><label>Telegram</label><input id="social_telegram"></div>
+    </div>
+    
+    <div class="edit-actions"><button class="primary-btn" onclick="saveEdits()">💾 Save Changes</button><button class="primary-btn" style="background:#eeeafd;color:#5546c9;" onclick="resetEdits()">↺ Reset Saved Edits</button></div>
+  </div>
+</div>
+
+<script>
+
+/* =========================
+   FULLSCREEN IMAGE LIGHTBOX
+========================= */
+function openImageLightbox(src, alt){
+    const modal=document.getElementById("imageLightbox");
+    const img=document.getElementById("lightboxImage");
+    if(!modal || !img || !src) return;
+    img.src=src;
+    img.alt=alt||"Fullscreen preview";
+    modal.classList.add("active");
+    modal.setAttribute("aria-hidden","false");
+    document.body.style.overflow="hidden";
+}
+function closeImageLightbox(event){
+    if(event && event.target && event.target.id==="lightboxImage") return;
+    const modal=document.getElementById("imageLightbox");
+    const img=document.getElementById("lightboxImage");
+    if(modal) modal.classList.remove("active");
+    if(modal) modal.setAttribute("aria-hidden","true");
+    if(img) img.src="";
+    document.body.style.overflow="";
+}
+function initImageLightbox(){
+    document.querySelectorAll(".gallery-item img, .room-image").forEach(img=>{
+        img.addEventListener("click",function(event){
+            event.preventDefault();
+            event.stopPropagation();
+            openImageLightbox(this.currentSrc||this.src,this.alt);
+        });
+    });
+}
+
+/* =========================
+   MODAL FUNCTIONS
+========================= */
+
+function openRoomModal(){
+
+    document
+        .getElementById("roomModal")
+        .classList.add("active");
+
+    document.body.style.overflow="hidden";
+}
+
+
+function openPriceModal(){
+
+    document
+        .getElementById("priceModal")
+        .classList.add("active");
+
+    document.body.style.overflow="hidden";
+}
+
+
+function closeModal(id){
+
+    document
+        .getElementById(id)
+        .classList.remove("active");
+
+    document.body.style.overflow="";
+}
+
+
+function closeOutside(event,id){
+
+    if(event.target.id === id){
+
+        closeModal(id);
+
+    }
+
+}
+
+
+/* =========================
+   LOCATION
+========================= */
+
+function openLocation(){
+
+    window.open(
+        "https://maps.app.goo.gl/QqN6tyiYzDaZW7Zm8",
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   ENQUIRY
+========================= */
+
+function openEnquiry(){
+    openBookModal();
+}
+
+
+function roomEnquiry(room){
+
+    const message =
+        "Hello JANNA Gents Hostel, I am interested in the "
+        + room
+        + " room. Please share more details.";
+
+    window.open(
+        "https://wa.me/918086311143?text="
+        + encodeURIComponent(message),
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   SAVE CONTACT
+========================= */
+
+function saveContact(event){
+
+    if(event){
+        event.preventDefault();
+    }
+
+    const d=getEdits();
+    const name=d.name||"JANNA GENTS HOSTEL";
+    const phone=(d.phone||"8086311143").replace(/\D/g,"");
+    const email=d.email||"jannahostel@gmail.com";
+    const address=d.address||"St.Francis church road , kaloor- kathrukadavu, 682017";
+    const vcard =
+`BEGIN:VCARD
+VERSION:3.0
+FN:${name}
+ORG:${name}
+TEL;TYPE=CELL:${phone}
+EMAIL:${email}
+ADR;TYPE=WORK:;;${address}
+NOTE:${d.about||""}
+END:VCARD`;
+
+    const blob =
+        new Blob(
+            [vcard],
+            {type:"text/vcard"}
+        );
+
+    const url =
+        URL.createObjectURL(blob);
+
+    const a =
+        document.createElement("a");
+
+    a.href=url;
+
+    a.download=
+        "JANNA-GENTS-HOSTEL.vcf";
+
+    a.click();
+
+    URL.revokeObjectURL(url);
+
+}
+
+
+/* =========================
+   COPY WEBSITE
+========================= */
+
+function copyWebsite(event){
+    if(event) event.preventDefault();
+    const url=window.location.href;
+    if(navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(url).then(()=>alert("Website link copied!")).catch(()=>fallbackCopy(url));
+    }else{
+        fallbackCopy(url);
+    }
+}
+function fallbackCopy(text){
+    const ta=document.createElement("textarea");
+    ta.value=text;
+    ta.setAttribute("readonly","");
+    ta.style.position="fixed";ta.style.opacity="0";
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand("copy");alert("Website link copied!");}
+    catch(e){alert("Copy failed. Please copy the website address manually.");}
+    ta.remove();
+}
+
+
+/* =========================
+   QR PLACEHOLDER
+========================= */
+
+function showQR(event){
+    if(event) event.preventDefault();
+    const modal=document.getElementById("qrModal");
+    modal.classList.add("active");
+    document.body.style.overflow="hidden";
+    const box=document.getElementById("qrcode");
+    box.innerHTML="";
+    const url=window.location.href;
+    document.getElementById("qrUrlText").textContent=url;
+    if(window.QRCode){
+        new QRCode(box,{text:url,width:230,height:230,correctLevel:QRCode.CorrectLevel.H});
+    }else{
+        box.innerHTML='<p class="info-modal-text">QR generator could not be loaded. Please try again.</p>';
+    }
+}
+
+function openDescriptionModal(){
+    document.getElementById("descriptionModal").classList.add("active");
+    document.body.style.overflow="hidden";
+}
+
+function openAddressModal(){
+    document.getElementById("addressModal").classList.add("active");
+    document.body.style.overflow="hidden";
+}
+
+function openWhatsAppModal(){
+    document.getElementById("whatsappModal").classList.add("active");
+    document.body.style.overflow="hidden";
+}
+
+function openBookModal(){
+    document.getElementById("bookModal").classList.add("active");
+    document.body.style.overflow="hidden";
+}
+
+function openBankModal(){
+    const modal=document.getElementById("bankModal");
+    const box=document.getElementById("paymentQRCode");
+    modal.classList.add("active");
+    document.body.style.overflow="hidden";
+    box.innerHTML="";
+
+    const upiLink="upi://pay?pa=sainul.abid69-19@okhdfcbank&pn=sainul%20habeeb";
+    if(window.QRCode){
+        new QRCode(box,{
+            text:upiLink,
+            width:230,
+            height:230,
+            correctLevel:QRCode.CorrectLevel.H
+        });
+    }else{
+        box.innerHTML='<p class="info-modal-text">QR generator could not be loaded. Please try again.</p>';
+    }
+}
+
+function openAutoReplyModal(){
+    document.getElementById("autoReplyModal").classList.add("active");
+    document.body.style.overflow="hidden";
+}
+
+function copyText(text){
+    navigator.clipboard.writeText(text).then(()=>alert("Copied!"));
+}
+
+function copyAddress(){
+    const d=getEdits();
+    copyText(d.address||"St.Francis church road , kaloor- kathrukadavu, 682017");
+}
+
+function sendQuickWhatsApp(){
+    const name=document.getElementById("waName").value.trim();
+    const place=document.getElementById("waPlace").value.trim();
+    const message=document.getElementById("waMessage").value.trim();
+    if(!name || !message){ alert("Please enter your name and message."); return; }
+    const text=`Hello JANNA Gents Hostel,\n\nName: ${name}\nPlace: ${place || "Not provided"}\nMessage: ${message}`;
+    window.open("https://wa.me/918086311143?text="+encodeURIComponent(text),"_blank");
+}
+
+function sendBooking(){
+    const name=document.getElementById("bookName").value.trim();
+    const room=document.getElementById("bookRoom").value;
+    const date=document.getElementById("bookDate").value;
+    const time=document.getElementById("bookTime").value;
+    const notes=document.getElementById("bookNotes").value.trim();
+    if(!name || !date || !time){ alert("Please fill in your name, date and time."); return; }
+    const text=`Hello JANNA Gents Hostel, I would like to book/enquire about a room.\n\nName: ${name}\nRoom: ${room}\nPreferred Date: ${date}\nPreferred Time: ${time}\nNotes: ${notes || "None"}`;
+    window.open("https://wa.me/918086311143?text="+encodeURIComponent(text),"_blank");
+}
+
+function copyAutoReply(){
+    copyText('Hi, welcome to “JANNA GENTS HOSTEL”. Visit our website for more details.');
+}
+
+function downloadQR(){
+    const canvas=document.querySelector("#qrcode canvas");
+    if(!canvas){alert("QR is not ready yet.");return;}
+    const a=document.createElement("a");
+    a.href=canvas.toDataURL("image/png");
+    a.download="JANNA-GENTS-HOSTEL-QR.png";
+    a.click();
+}
+
+
+
+/* =========================
+   WEBPAGE REQUEST / EDITOR
+========================= */
+const EDIT_PASSWORD = "Janna@20100";
+const EDIT_KEY = "jannaHostelEdits_v1";
+const WEBPAGE_NUMBER = "918848290922";
+const WEBPAGE_MESSAGE = "Hi! I saw your JANNA HOSTEL digital visiting card and would like to create one for myself. Please share the details.";
+
+function toggleTopMenu(event){
+    if(event) event.stopPropagation();
+    const menu=document.getElementById("topMenu");
+    const btn=document.querySelector(".mobile-menu");
+    if(!menu)return;
+    const active=menu.classList.toggle("active");
+    if(btn)btn.setAttribute("aria-expanded",active?"true":"false");
+}
+function closeTopMenu(){
+    const menu=document.getElementById("topMenu");
+    const btn=document.querySelector(".mobile-menu");
+    if(menu)menu.classList.remove("active");
+    if(btn)btn.setAttribute("aria-expanded","false");
+}
+document.addEventListener("click",function(event){
+    if(!event.target.closest(".menu-wrap"))closeTopMenu();
+});
+
+function openWebpageWhatsApp(event){
+    if(event) event.preventDefault();
+    window.open("https://wa.me/"+WEBPAGE_NUMBER+"?text="+encodeURIComponent(WEBPAGE_MESSAGE),"_blank");
+}
+function sendNeedWebpageWhatsApp(){ openWebpageWhatsApp(); }
+function openEditLogin(event){
+    if(event) event.preventDefault();
+    closeTopMenu();
+    document.getElementById("editPassword").value="";
+    document.getElementById("editLoginModal").classList.add("active");
+    document.body.style.overflow="hidden";
+}
+function verifyEditPassword(){
+    const pass=document.getElementById("editPassword").value;
+    if(pass!==EDIT_PASSWORD){ alert("Incorrect password."); return; }
+    closeModal("editLoginModal");
+    openEditor();
+}
+function openEditor(){
+    document.getElementById("editorModal").classList.add("active");
+    document.body.style.overflow="hidden";
+    loadEditorFields();
+}
+function val(id){ const el=document.getElementById(id); return el?el.value:""; }
+function setVal(id,v){ const el=document.getElementById(id); if(el) el.value=v??""; }
+function loadEditorFields(){
+ const d=getEdits();
+ const defaults={name:"JANNA GENTS HOSTEL",subtitle:"Single / 2 / 3 / 4 / 6 Sharing Rooms",about:"Homely Food | Free Unlimited Wi-Fi | Parking Facilities | 24/7 CCTV Surveillance | Food & Accommodation",phone:"8086311143",email:"jannahostel@gmail.com",address:"St.Francis church road , kaloor- kathrukadavu, 682017",review:"https://search.google.com/local/writereview?placeid=ChIJGyK5Jg0NCDsROxzElXIbqWU",
+ r1_name:"Single Sharing",r1_price:"₹8,000",r1_desc:"Comfortable private room",r2_name:"2 Sharing",r2_price:"₹7,000",r2_desc:"Comfortable shared accommodation",r3_name:"3 Sharing",r3_price:"₹6,500",r3_desc:"Spacious shared accommodation",r4_name:"4 Sharing",r4_price:"₹6,000",r4_desc:"Spacious shared room",r6_name:"6 Sharing",r6_price:"₹5,500",r6_desc:"Budget-friendly shared room",bank_holder:"sainul habeeb",bank_account:"4323002100006883",bank_ifsc:"PUNB0432300",bank_name:"Punjab National Bank",bank_branch:"NILAMBUR",social_facebook:"#",social_instagram:"https://www.instagram.com/janna_gents_hostel",social_linkedin:"#",social_x:"#",social_telegram:"https://t.me/"};
+ Object.keys(defaults).forEach(k=>setVal("e_"+k, d[k]??defaults[k]));
+ ["r1","r2","r3","r4","r6"].forEach(k=>["name","price","desc"].forEach(x=>setVal(k+"_"+x,d[k+"_"+x]??defaults[k+"_"+x])));
+ ["bank_holder","bank_account","bank_ifsc","bank_name","bank_branch","social_facebook","social_instagram","social_linkedin","social_x","social_telegram"].forEach(k=>setVal(k,d[k]??defaults[k]));
+}
+function getEdits(){ try{return JSON.parse(localStorage.getItem(EDIT_KEY)||"{}")}catch(e){return {}} }
+function saveEdits(){
+ const d={};
+ ["name","subtitle","about","phone","email","address","review"].forEach(k=>d[k]=val("e_"+k));
+ ["r1","r2","r3","r4","r6"].forEach(k=>["name","price","desc"].forEach(x=>d[k+"_"+x]=val(k+"_"+x)));
+ ["bank_holder","bank_account","bank_ifsc","bank_name","bank_branch","social_facebook","social_instagram","social_linkedin","social_x","social_telegram"].forEach(k=>d[k]=val(k));
+ try{localStorage.setItem(EDIT_KEY,JSON.stringify(d));}catch(e){alert("Could not save text changes. Browser storage may be full.");return;}
+ applyEdits(d);
+ alert("Changes saved successfully!");
+}
+function applyEdits(d){
+ const name=d.name||"JANNA GENTS HOSTEL", phone=d.phone||"8086311143", email=d.email||"jannahostel@gmail.com", address=d.address||"St.Francis church road , kaloor- kathrukadavu, 682017";
+ document.title=name;
+ ["hostelName","navHostelName","footerHostelName"].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=name;});
+ const st=document.getElementById("hostelSubtitle");if(st)st.textContent=d.subtitle||"";
+ const ab=document.getElementById("aboutText");if(ab)ab.textContent=d.about||"";
+ const ml=document.getElementById("mobileLink");if(ml)ml.href="tel:"+phone.replace(/\D/g,"");
+ const wl=document.getElementById("whatsappLink");if(wl)wl.href="https://wa.me/"+phone.replace(/\D/g,"");
+ const el=document.getElementById("emailLink");if(el)el.href="mailto:"+email;
+ const review=document.querySelector('a[href^="https://search.google.com/local/writereview"]');if(review&&d.review)review.href=d.review;
+ const roomMap={r1:["r1_display_name","r1_display_desc","r1_display_price","r1_price_name"],r2:["r2_display_name","r2_display_desc","r2_display_price","r2_price_name"],r3:["r3_display_name","r3_display_desc","r3_display_price","r3_price_name"],r4:["r4_display_name","r4_display_desc","r4_display_price","r4_price_name"],r6:["r6_display_name","r6_display_desc","r6_display_price","r6_price_name"]};
+ Object.keys(roomMap).forEach(k=>{const [n,desc,price,pname]=roomMap[k]; if(document.getElementById(n))document.getElementById(n).textContent=d[k+"_name"]||"";if(document.getElementById(desc))document.getElementById(desc).textContent=d[k+"_desc"]||"";if(document.getElementById(price))document.getElementById(price).textContent=d[k+"_price"]||"";if(document.getElementById(pname))document.getElementById(pname).textContent=d[k+"_name"]||"";});
+ const adrText=document.querySelectorAll("#addressModal p"); adrText.forEach(e=>{if(e.textContent.includes("St.Francis")||e.textContent.includes("church road"))e.textContent=address;});
+ document.querySelectorAll('a[href="tel:8086311143"],a[href^="tel:"]').forEach(a=>{if(a.id!=="mobileLink")a.href="tel:"+phone.replace(/\D/g,"")});
+ document.querySelectorAll('a[href^="mailto:"]').forEach(a=>a.href="mailto:"+email);
+ const mapUrl="https://maps.app.goo.gl/QqN6tyiYzDaZW7Zm8";
+ const locs=document.querySelectorAll('a[href*="google.com/maps/search"]');locs.forEach(a=>a.href=mapUrl);
+ const fb=document.getElementById("socialFacebook");
+ if(fb){ const f=(d.social_facebook||"").trim(); fb.href=f&&f!=="#"?f:("https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(window.location.href)); fb.target="_blank"; }
+ const ig=document.getElementById("socialInstagram");
+ if(ig){ const i=(d.social_instagram||"").trim(); ig.href=i&&i!=="#"?i:"https://www.instagram.com/janna_gents_hostel"; ig.target="_blank"; }
+ updateWhatsAppNumbers(phone);
+}
+function updateWhatsAppNumbers(phone){
+ const n=(phone||"8086311143").replace(/\D/g,"");
+ document.querySelectorAll('a[href*="wa.me/"]').forEach(a=>{const href=a.getAttribute("href")||""; if(href.includes("918848290922"))return; a.href="https://wa.me/"+n;});
+}
+function previewImage(input,targetId,key){
+ const file=input.files&&input.files[0]; if(!file)return;
+ const reader=new FileReader(); reader.onload=function(e){
+   const data=e.target.result;
+   try{const d=getEdits();d["img_"+key]=data;localStorage.setItem(EDIT_KEY,JSON.stringify(d));}catch(err){alert("Image could not be saved. Try a smaller image.");return;}
+   if(targetId){const img=document.getElementById(targetId);if(img)img.src=data;}
+   if(key==="cover"){const cover=document.querySelector(".profile-cover");if(cover)cover.style.backgroundImage='linear-gradient(135deg,rgba(143,96,61,.82),rgba(210,176,145,.52)),url("'+data+'")';}
+ }; reader.readAsDataURL(file);
+}
+function applySavedImages(){
+ const d=getEdits();
+ const map={logo:"logoImage",room1:"roomImg1",room2:"roomImg2",room3:"roomImg3",room4:"roomImg4",room6:"roomImg6",gallery1:"galleryImg1",gallery2:"galleryImg2",gallery3:"galleryImg3",gallery4:"galleryImg4",gallery5:"galleryImg5"};
+ Object.keys(map).forEach(k=>{if(d["img_"+k]){const e=document.getElementById(map[k]);if(e)e.src=d["img_"+k];}});
+ if(d.img_cover){const cover=document.querySelector(".profile-cover");if(cover)cover.style.backgroundImage='linear-gradient(135deg,rgba(143,96,61,.82),rgba(210,176,145,.52)),url("'+d.img_cover+'")';}
+}
+function applySavedEditsOnLoad(){const d=getEdits();if(Object.keys(d).length){applyEdits(d);applySavedImages();}}
+function resetEdits(){if(!confirm("Reset all saved edits and return to the original page values?"))return;localStorage.removeItem(EDIT_KEY);location.reload();}
+
+/* =========================
+   ESC KEY
+========================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(event.key === "Escape"){
+            closeImageLightbox();
+
+            closeModal("roomModal");
+            closeModal("priceModal");
+            closeModal("descriptionModal");
+            closeModal("addressModal");
+            closeModal("whatsappModal");
+            closeModal("bookModal");
+            closeModal("bankModal");
+            closeModal("autoReplyModal");
+            closeModal("qrModal");
+            closeModal("editLoginModal");
+            closeModal("editorModal");
+            closeModal("webpageModal");
+
+        }
+
+    }
+);
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(
+                entry => {
+
+                    if(entry.isIntersecting){
+
+                        entry.target.style.opacity="1";
+
+                        entry.target.style.transform=
+                            "translateY(0)";
+
+                    }
+
+                }
+            );
+
+        },
+        {
+            threshold:.1
+        }
+    );
+
+
+document
+    .querySelectorAll(".card")
+    .forEach(card => {
+
+        card.style.opacity="0";
+
+        card.style.transform=
+            "translateY(20px)";
+
+        card.style.transition=
+            "opacity .7s ease, transform .7s ease";
+
+        observer.observe(card);
+
+    });
+
+
+</script>
+
+</body>
+</html>
+
