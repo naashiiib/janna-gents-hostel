@@ -1,10 +1,24 @@
+import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = "development-only-change-this-before-deployment"
+SECRET_KEY = os.environ.get("SECRET_KEY", "development-only-change-this-before-deployment")
 DEBUG = True
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0", "testserver", ".sg2.manus.computer"]
-CSRF_TRUSTED_ORIGINS = ["https://*.sg2.manus.computer"]
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "0.0.0.0",
+    "testserver",
+    ".vercel.app",
+    "janna-gents-hostel.vercel.app",
+    ".sg2.manus.computer",
+    "*",
+]
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.vercel.app",
+    "https://janna-gents-hostel.vercel.app",
+    "https://*.sg2.manus.computer",
+]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
