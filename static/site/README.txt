@@ -1,0 +1,1 @@
+The uploaded source included only index.html, so the referenced original image files are not available here. Place logo.png, b.png, cover.jpg, s.jpg, 2.jpg, 3.jpg, 4.jpg, and 6.jpg in this folder to use the exact original image assets. Images may alternatively be uploaded through Django admin.
